@@ -8,14 +8,8 @@ This program takes an NTDS.dit file (or any files that have hashes in them that 
 ## Installation
 
 Windows:
-```
-git clone --recursive https://github.com/Cookie-Monsta-Rulez/DIT_Scrubber.git 
-cd DIT_Scrubber
-python3 -m virtualenv venv
-venv\scripts\activate.bat
-pip install -r requirements.txt
-python DIT_Scrubber.py -h
-```
+
+**Windows Support is Currently in Development**
 
 Linux: 
 ```
