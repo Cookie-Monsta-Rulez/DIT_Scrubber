@@ -1,6 +1,6 @@
-argparse
-fileinput
-re
-os
+
 termcolor
 pyfiglet
+python-docx 
+colorama
+

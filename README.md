@@ -3,7 +3,7 @@ A python program to efficiently see what hashes in a DIT have been cracked by Ha
 
 ![image](https://github.com/user-attachments/assets/abd6c8f5-9cab-494e-ac27-643a0cad37a2)
 
-This program takes an NTDS.dit file (or any files that have hashes in them that are compatible with Hashcat) and uses the Hashcat potfile (either specified or default path) and will append the cleartext credentials to the hashes in the target file. It can also provide a count of password occurences and an overall total of cracked passwords in an NTDS.dit file!
+This program takes an NTDS.dit file (or any files that have hashes in them that are compatible with Hashcat) and uses the Hashcat potfile (either specified or default path) and will append the cleartext credentials to the hashes in the target file. It can also provide a count of password occurences and an overall total of cracked passwords in an NTDS.dit file! Reports can be generated as either a .docx with a table or a CSV file. 
 
 ## Installation
 
@@ -31,24 +31,24 @@ python3 DIT_Scruuber.py -d <path to ntds.dit file> -p <path to potfile (or uses 
 The help menu is as follows: 
 
 ```
- _____ _          
+ _____ _
 |_   _| |__   ___ 
   | | | '_ \ / _ \
   | | | | | |  __/
   |_| |_| |_|\___|
-                  
+
       ____ ___ _____ 
      |  _ \_ _|_   _|
      | | | | |  | |  
      | |_| | |  | |  
      |____/___| |_|  
-                     
-         ____                  _     _               
+
+         ____                  _     _
         / ___|  ___ _ __ _   _| |__ | |__   ___ _ __ 
         \___ \ / __| '__| | | | '_ \| '_ \ / _ \ '__|
-         ___) | (__| |  | |_| | |_) | |_) |  __/ |   
-        |____/ \___|_|   \__,_|_.__/|_.__/ \___|_|   
-                                                     
+         ___) | (__| |  | |_| | |_) | |_) |  __/ |
+        |____/ \___|_|   \__,_|_.__/|_.__/ \___|_|
+
 
 
 ⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -66,10 +66,11 @@ The help menu is as follows:
 ⠀⠀⠀⠀⣿⣿⣿⡿⠀⠀⣽⠀⠀⠀⠘⠿⣦⣀⠀⠀⠀⠀⠀⢀⣴⠾⠋⠀⠀⠀
 ⠀⠀⠀⠀⠻⣯⣄⣀⣠⣴⠟⠀⠀⠀⠀⠀⠈⠉⠛⠛⠒⠚⠛⠉⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-usage: DIT Scrubber -d DIT [-p POTFILE] [-h] [-o OUTFILE] [-C]
+usage: DIT Scrubber -d DIT [-p POTFILE] [-h] [-o OUTFILE] [-docx DOCXFILE] [-csv CSVFILE] [-C] [-r]
 
-Created by Cookie-Monsta-Rulez - This program takes an NTDS.dit file (or any files that have hashes in them that are compatible with Hashcat) and uses the Hashcat potfile (either specified or default path) and will append the
-cleartext credentials to the hashes in the target file. It can also provide a count of password occurences and an overall total of cracked passwords in an NTDS.dit file!
+Created by Cookie-Monsta-Rulez - This program takes an NTDS.dit file (or any files that have hashes in them that are compatible with Hashcat) and uses the Hashcat      
+potfile (either specified or default path) and will append the cleartext credentials to the hashes in the target file. It can also provide a count of password
+occurences and an overall total of cracked passwords in an NTDS.dit file!
 
 options:
   -d DIT, --dit DIT     DIT File
@@ -78,7 +79,12 @@ options:
   -h, --help            You're looking at it baby!
   -o OUTFILE, --outfile OUTFILE
                         Output file to store the NTDS.dit file appended with cleartext passwords
+  -docx DOCXFILE, --docxfile DOCXFILE
+                        DOCX file to store a report with a count of each password found within the DIT (requires -d/--dit)
+  -csv CSVFILE, --csvfile CSVFILE
+                        CSV file to store a report with a count of each password found within the DIT (requires -d/--dit)
   -C, --count           Provides a Count of each Password found within the DIT
+  -r, --reuse           Checks to see if any hashes were reused from provided DIT
 
 Have improvements? Want a feature implemented? Please feel free to submit a pull request!
 
